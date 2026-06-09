@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haley's Grandma Graduation Adventure</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="floating-stickers" aria-hidden="true">
+    <span>🎓</span><span>🐼</span><span>💙</span><span>🧋</span><span>✨</span><span>🏸</span><span>🚫🐦</span><span>🌸</span>
+  </div>
+
+  <main class="phone-frame">
+    <section class="page active" id="page0">
+      <div class="card hero">
+        <p class="tag">CSA Family Tree Special</p>
+        <h1>Haley’s Grandma Graduation Adventure 🎓🐼✨</h1>
+        <img class="cover-photo" src="images/solos/1.jpg" alt="Haley cover photo" />
+        <p class="subtitle">heyyy best grandma ever!!</p>
+        <p>Welcome to your very official, very emotional, slightly chaotic graduation website.</p>
+        <p>Haley, aka my CSA grandma, aka bird-fearing business queen, aka graduating early because apparently being impressive is just your hobby.</p>
+        <button onclick="goToPage(1)">Start the Adventure ✨</button>
+      </div>
+    </section>
+
+    <section class="page" id="page1">
+      <div class="card">
+        <p class="tag">Page 1</p>
+        <h2>The Best Grandma Award 🏆</h2>
+        <p>You are officially receiving the award for <strong>Best CSA Grandma Ever</strong>.</p>
+        <p>Even though me and Kelly are always so busy and we don’t get to hang out as much, you’re always so fun to talk to. I’m really glad you became my grandma in CSA.</p>
+        <button onclick="showPopup('🏆 Certified Best Grandma in the CSA Family Tree. Picked by fate. Approved by Kelly. Appreciated by me.')">Open Your Grandma Award</button>
+        <button onclick="showRandomSolo()">Reveal Grandma Energy 📸</button>
+        <button onclick="goToPage(2)">Next Stop ➜</button>
+      </div>
+    </section>
+
+    <section class="page" id="page2">
+      <div class="card">
+        <p class="tag">Page 2</p>
+        <h2>CSA Family Tree Memories 🌳</h2>
+        <p>Group pics are separated here in the order from your files. Click through the memories one by one.</p>
+        <div class="slideshow">
+          <img id="groupSlide" alt="Group memory" />
+          <p id="groupCaption" class="caption"></p>
+        </div>
+        <button onclick="prevGroup()">← Previous</button>
+        <button onclick="nextGroup()">Next Memory →</button>
+        <button onclick="openCurrentGroup()">Pop It Out ✨</button>
+        <button onclick="goToPage(3)">Silly Haley Hall ➜</button>
+      </div>
+    </section>
+
+    <section class="page" id="page3">
+      <div class="card silly">
+        <p class="tag">Page 3</p>
+        <h2>Silly Haley Hall of Fame 🤪</h2>
+        <p>For the solo and silly Haley pics. Very serious historical evidence.</p>
+        <div class="slideshow">
+          <img id="soloSlide" alt="Solo Haley memory" />
+          <p id="soloCaption" class="caption"></p>
+        </div>
+        <button onclick="prevSolo()">← Previous</button>
+        <button onclick="nextSolo()">Next Silly Pic →</button>
+        <button onclick="openCurrentSolo()">Caught in 4K 📸</button>
+        <button onclick="goToPage(4)">Very Haley Things ➜</button>
+      </div>
+    </section>
+
+    <section class="page" id="page4">
+      <div class="card">
+        <p class="tag">Page 4</p>
+        <h2>Things That Are Very Haley 💖</h2>
+        <div class="grid">
+          <button onclick="showPopup('🐼 Panda mode activated. Soft, cute, and iconic.')">🐼 Panda</button>
+          <button onclick="showPopup('💙 Stitch has entered the chat. Chaotic but lovable.')">💙 Stitch</button>
+          <button onclick="showPopup('🧋 Hojicha boba break. This is not optional.')">🧋 Hojicha Boba</button>
+          <button onclick="showPopup('🏸 Badminton grandma energy unlocked.')">🏸 Badminton</button>
+          <button onclick="showPopup('📊 Third-year business major graduating early because she is simply built different.')">📊 Business Queen</button>
+          <button onclick="goToPage(5)">🚫🐦 Bird Alert</button>
+        </div>
+        <p>Business major: yes. Disney lover: yes. Grandma energy: yes. Bird tolerance: absolutely no.</p>
+        <button onclick="showPopup(randomHaleyJoke())">Generate Haley Inside Joke</button>
+        <button onclick="goToPage(5)">Emergency Bird Zone ➜</button>
+      </div>
+    </section>
+
+    <section class="page" id="page5">
+      <div class="card warning">
+        <p class="tag">Page 5</p>
+        <h2>Emergency Bird Warning Zone 🚫🐦</h2>
+        <p class="bird" id="bird">🐦</p>
+        <p>WARNING: Bird detected.</p>
+        <p>Just kidding. Please don’t leave the website.</p>
+        <button onclick="removeBird()">Remove Bird</button>
+        <button onclick="showPopup('The bird has been safely escorted away. Haley may now continue her graduation celebration in peace.')">Safety Report</button>
+        <button onclick="goToPage(6)">Escape to Final Letter ➜</button>
+      </div>
+    </section>
+
+    <section class="page" id="page6">
+      <div class="card finale">
+        <p class="tag">Final Page</p>
+        <h2>Dear Grandma Haley 💌</h2>
+        <p>Haley, I’m so happy for you that you’re graduating, but I’m also so sad that you’re leaving.</p>
+        <p>You’re such an awesome person, and I really believe you’re going to do so great. I hope everything treats you well, and I hope your future is bright and shiny.</p>
+        <p>It was really, really nice to meet you and get to know you during my first year of college. I’ll miss you so much!</p>
+        <p class="signature">Love,<br>Your CSA grandchild 💖</p>
+        <button onclick="showPopup('Virtual hug delivered. Please remember your grandchild misses you already 💖')">Open Final Hug</button>
+        <button onclick="confettiParty()">Celebrate Haley 🎉</button>
+        <button onclick="goToPage(0)">Back to Start</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="popup" class="popup hidden">
+    <div class="popup-box">
+      <button class="x" onclick="closePopup()">×</button>
+      <p id="popupText"></p>
+    </div>
+  </div>
+
+  <div id="photoModal" class="popup hidden">
+    <div class="popup-box photo-box">
+      <button class="x" onclick="closePhoto()">×</button>
+      <img id="modalImg" alt="Memory photo" />
+      <p id="photoCaption"></p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
